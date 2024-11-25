@@ -1,0 +1,20 @@
+{%extends 'index.html' %}
+{% block title %}
+login
+{% endblock %}
+{% block content %}
+<h1>login user</h1>
+<form action="{% url 'users:login' %}" class="form-component" method="post">
+    {% csrf_token %}
+    {{ form }}
+    {% if request.GET.next %}
+    <input type="hidden" name="next" value="{{ request.GET.next }}">
+    {% endif %}
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
+{% block footer %}
+<p>Check out my <a href="/">homepage </a></p>
+
+{% endblock %}

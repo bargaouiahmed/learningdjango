@@ -1,0 +1,17 @@
+{%extends 'index.html' %}
+{% block title %}
+register
+{% endblock %}
+{% block content %}
+<h1>register new user</h1>
+<form action="{% url 'users:registration' %}" class="form-component" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
+{% block footer %}
+<p>Check out my <a href="/">homepage </a></p>
+
+{% endblock %}

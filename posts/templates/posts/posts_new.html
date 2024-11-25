@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% block title %}
+{{post.title}}
+{% endblock %}
+{% block content %}
+<section>
+<h1>new post</h1>
+<form class="form-with-validation" action="{% url 'posts:new-post' %}" method="post"
+enctype="multipart/form-data">
+{% csrf_token %}
+{{form}}
+<button>Post</button>
+</form>
+
+</section>
+{% endblock %}
+{% block footer %}
+<p>Check out my <a href="/">homepage </a></p>
+
+{% endblock %}
